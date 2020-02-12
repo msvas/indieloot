@@ -16,4 +16,4 @@
 //= require jquery.bundle
 //= require scripts
 //= require charts
-//= require_tree .
+//= require custom

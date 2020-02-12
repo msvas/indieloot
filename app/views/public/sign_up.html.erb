@@ -133,11 +133,11 @@
                     <!-- Block @s -->
                     <div class="nk-block">
                         <div class="row gutter-vr-30px justify-content-center">
-													<a href="#" class="">
+													<a href="javascript:void(0)" onclick="selectPlan(0, 1)">
                             <div class="col-lg-6 col-md-6">
-                                <div class="feature feature-s8 feature-center card card-full card-md bg-theme-alt animated"
+                                <div id="plan0" class="feature feature-s8 feature-center card card-full card-md bg-theme-alt animated"
 																	data-animate="fadeInUp" data-delay=".4" style="border: 3px solid #f42f54;">
-                                    <div class="feature-icon feature-icon-lg my-0">
+                                    <div class="feature-icon my-0">
 																			<%= image_tag "medal.png" %>
                                     </div>
                                     <div class="feature-text feature-text-s8">
@@ -148,10 +148,10 @@
                                 </div>
                             </div><!-- .col -->
 													</a>
-													<a href="#">
+													<a href="javascript:void(0)" onclick="selectPlan(1, 0)">
                             <div class="col-lg-6 col-md-6">
-                                <div class="feature feature-s8 feature-center card card-full card-md bg-theme-alt animated" data-animate="fadeInUp" data-delay=".5">
-                                    <div class="feature-icon feature-icon-lg my-0">
+                                <div id="plan1" class="feature feature-s8 feature-center card card-full card-md bg-theme-alt animated" data-animate="fadeInUp" data-delay=".5">
+                                    <div class="feature-icon my-0">
                                         <%= image_tag "trophy.png" %>
                                     </div>
                                     <div class="feature-text feature-text-s8">
@@ -164,6 +164,52 @@
 													</a>
                         </div><!-- .row -->
                     </div><!-- .block @e -->
+										<div class="section-head section-head-s9 wide-sm">
+                        <h6 class="title title-xs title-s1 tc-primary animated" data-animate="fadeInUp" data-delay=".1">Planos</h6>
+                        <h2 class="title title-semibold animated" data-animate="fadeInUp" data-delay=".2">Crie sua conta</h2>
+                        <p class="animated" data-animate="fadeInUp" data-delay=".3">The ICO Crypto Team combines a passion for esports, industry experise &amp; proven record in finance, development, marketing.</p>
+                    </div>
+										<form action="#">
+											<div class="row">
+												<div class="col-lg-6 col-md-6">
+													<div class="field-item">
+															<div class="field-wrap">
+																	<input type="text" class="input-bordered" placeholder="Seu nome">
+															</div>
+													</div>
+												</div>
+												<div class="col-lg-6 col-md-6">
+													<div class="field-item">
+															<div class="field-wrap">
+																	<input type="text" class="input-bordered" placeholder="Seu email">
+															</div>
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-lg-6 col-md-6">
+													<div class="field-item">
+															<div class="field-wrap">
+																	<input type="password" class="input-bordered" placeholder="Sua senha">
+															</div>
+													</div>
+												</div>
+												<div class="col-lg-6 col-md-6">
+													<div class="field-item">
+															<div class="field-wrap">
+																	<input type="password" class="input-bordered" placeholder="Repita sua senha">
+															</div>
+													</div>
+												</div>
+											</div>
+											<div class="col-lg-6 col-md-6">
+												<div class="field-item">
+														<input class="input-checkbox" id="agree-term-2" type="checkbox">
+														<label for="agree-term-2">I agree to Icos <a href="#">Privacy Policy</a> &amp; <a href="#">Terms</a>.</label>
+												</div>
+											</div>
+												<button class="btn btn-primary btn-block btn-md">Sign Up</button>
+										</form>
                 </div>
             </section>
 
