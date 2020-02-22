@@ -10,10 +10,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_16_204631) do
+ActiveRecord::Schema.define(version: 2020_02_22_204659) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "games", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.string "genre"
+    t.integer "tier"
+    t.float "steam_price"
+    t.float "base_price"
+  end
+
+  create_table "keys", force: :cascade do |t|
+    t.string "encrypted_key"
+    t.integer "status"
+    t.datetime "given_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "games_id"
+    t.bigint "users_id"
+    t.index ["games_id"], name: "index_keys_on_games_id"
+    t.index ["users_id"], name: "index_keys_on_users_id"
+  end
+
+  create_table "plans", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.integer "tier_one_games"
+    t.integer "tier_two_games"
+    t.integer "tier_three_games"
+    t.float "price"
+    t.float "discounted_price"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -38,10 +69,20 @@ ActiveRecord::Schema.define(version: 2020_02_16_204631) do
     t.string "name"
     t.integer "status"
     t.boolean "terms_of_service"
+    t.bigint "plans_id"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["plans_id"], name: "index_users_on_plans_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true
   end
 
+  create_table "users_games", id: false, force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "game_id", null: false
+  end
+
+  add_foreign_key "keys", "games", column: "games_id"
+  add_foreign_key "keys", "users", column: "users_id"
+  add_foreign_key "users", "plans", column: "plans_id"
 end

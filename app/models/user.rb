@@ -5,6 +5,10 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :confirmable, :lockable, :trackable
 
+  belongs_to :plan
+  has_many :keys
+  has_and_belongs_to_many :games, join_table: "users_games"
+
   enum status: {registered: 0, active: 1, suspended: 2, canceled: 3, deleted: 4}
 
   validates :email, presence:   { message: "é um campo obrigatório e não foi preenchido."},
