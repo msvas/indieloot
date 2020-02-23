@@ -1066,9 +1066,9 @@ select:focus { outline: none; border: none; }
 .token-countdown-clock .countdown-time { font-weight: 500; font-size: 24px; line-height: 1; }
 .token-countdown-clock .countdown-text { font-size: 12px; line-height: 1; display: block; }
 
-@media (min-width: 576px) { .token-info { padding: 20px 30px 20px 110px; }
+@media (min-width: 576px) { .token-info { padding: 20px 30px 20px 30px; }
   .token-bonus { padding-left: 0; } }
-@media (min-width: 768px) { .token-info { width: 58%; flex-grow: 0; } }
+@media (min-width: 768px) { .token-info { width: 40%; flex-grow: 0; } }
 .progress-card { border-radius: 4px; padding: 20px 15px; border: 2px solid #dce6f5; }
 .progress-card h4 { margin-bottom: 16px; }
 .progress-info { display: flex; justify-content: space-between; }
@@ -1404,7 +1404,7 @@ th.tranx-type span { padding: 0; }
   .activity-device { display: block; } }
 .refferal-info { position: relative; }
 .refferal-info > [class*=fa] { position: absolute; top: 0; left: 18px; line-height: 20px; padding: 15px 0; font-size: 14px; text-align: center; color: #6783b8; }
-.refferal-address { border: none; color: #6783b8; line-height: 20px; padding: 15px 40px; border-radius: 4px; border: 1px solid rgba(211, 224, 243, 0.5); width: 100%; background: #fff; }
+.refferal-address { font-size: 14px; border: none; color: #6783b8; line-height: 20px; padding: 15px 15px; border-radius: 4px; border: 1px solid rgba(211, 224, 243, 0.5); width: 100%; background: #fff; }
 .refferal-address:focus { outline: none; box-shadow: none; }
 .refferal-copy { position: absolute; right: 6px; top: 6px; height: 40px; width: 40px; line-height: 20px; padding: 10px 0; text-align: center; color: #6783b8; background: #e9eff9; border-radius: 4px; border: none; cursor: pointer; transition: all .4s; /*-- @updated on v1.0.1 --*/ }
 .refferal-copy:focus, .refferal-copy:hover { color: #fff; background: #2b56f5; box-shadow: none; outline: none; }

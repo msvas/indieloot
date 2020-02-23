@@ -15,4 +15,5 @@ Rails.application.routes.draw do
   root to: "public#index"
 
   get 'dashboard', to: 'users#dashboard'
+  get 'jogos-do-mes', to: 'users#month_games', as: :month_games
 end

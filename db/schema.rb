@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_22_204659) do
+ActiveRecord::Schema.define(version: 2020_02_22_230424) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 2020_02_22_204659) do
     t.integer "tier"
     t.float "steam_price"
     t.float "base_price"
+    t.boolean "featured", default: false
   end
 
   create_table "keys", force: :cascade do |t|
@@ -69,10 +70,10 @@ ActiveRecord::Schema.define(version: 2020_02_22_204659) do
     t.string "name"
     t.integer "status"
     t.boolean "terms_of_service"
-    t.bigint "plans_id"
+    t.bigint "plan_id"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["plans_id"], name: "index_users_on_plans_id"
+    t.index ["plan_id"], name: "index_users_on_plan_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true
   end
@@ -84,5 +85,5 @@ ActiveRecord::Schema.define(version: 2020_02_22_204659) do
 
   add_foreign_key "keys", "games", column: "games_id"
   add_foreign_key "keys", "users", column: "users_id"
-  add_foreign_key "users", "plans", column: "plans_id"
+  add_foreign_key "users", "plans"
 end

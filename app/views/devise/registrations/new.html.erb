@@ -123,7 +123,7 @@
         <main class="nk-pages tc-light">
             <!-- // -->
 						<section class="section" id="why">
-
+								<%= render "devise/shared/error_messages", resource: resource %>
                 <div class="container">
                     <div class="section-head section-head-s9 wide-sm">
                         <h6 class="title title-xs title-s1 tc-primary animated" data-animate="fadeInUp" data-delay=".1">Planos</h6>
@@ -171,7 +171,7 @@
                     </div>
 										<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name),
                 				defaults: { input_html: { class: 'validate' } }) do |f| %>
-												<%= f.hidden_field :plans_id, value: 0 %>
+												<%= f.hidden_field :plan_id, value: 1 %>
 											<div class="row">
 												<div class="col-lg-6 col-md-6">
 													<div class="field-item">
