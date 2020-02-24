@@ -6,8 +6,8 @@ class CreateKeys < ActiveRecord::Migration[5.2]
       t.datetime :given_date
       t.timestamps null: false
 
-      t.references :games, foreign_key: true
-      t.references :users, foreign_key: true
+      t.references :game, foreign_key: true
+      t.references :user, foreign_key: true
     end
   end
 end

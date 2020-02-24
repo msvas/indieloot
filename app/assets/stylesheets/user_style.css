@@ -1404,7 +1404,7 @@ th.tranx-type span { padding: 0; }
   .activity-device { display: block; } }
 .refferal-info { position: relative; }
 .refferal-info > [class*=fa] { position: absolute; top: 0; left: 18px; line-height: 20px; padding: 15px 0; font-size: 14px; text-align: center; color: #6783b8; }
-.refferal-address { font-size: 14px; border: none; color: #6783b8; line-height: 20px; padding: 15px 15px; border-radius: 4px; border: 1px solid rgba(211, 224, 243, 0.5); width: 100%; background: #fff; }
+.refferal-address { font-size: 12px; border: none; color: #6783b8; line-height: 20px; padding: 15px 15px; border-radius: 4px; border: 1px solid rgba(211, 224, 243, 0.5); width: 100%; background: #fff; }
 .refferal-address:focus { outline: none; box-shadow: none; }
 .refferal-copy { position: absolute; right: 6px; top: 6px; height: 40px; width: 40px; line-height: 20px; padding: 10px 0; text-align: center; color: #6783b8; background: #e9eff9; border-radius: 4px; border: none; cursor: pointer; transition: all .4s; /*-- @updated on v1.0.1 --*/ }
 .refferal-copy:focus, .refferal-copy:hover { color: #fff; background: #2b56f5; box-shadow: none; outline: none; }

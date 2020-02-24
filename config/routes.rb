@@ -16,4 +16,5 @@ Rails.application.routes.draw do
 
   get 'dashboard', to: 'users#dashboard'
   get 'jogos-do-mes', to: 'users#month_games', as: :month_games
+  get 'redeem-game-key', to: 'users#redeem_key'
 end

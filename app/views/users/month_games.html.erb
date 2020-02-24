@@ -114,10 +114,27 @@
                               <div class="token-countdown">
                                   <span class="token-countdown-title">Sua chave de ativação</span>
                                   <div class="refferal-info">
-                                      <span class="refferal-copy-feedback copy-feedback"></span>
-                                      <!-- <input type="text" class="refferal-address" value="AAAAA-BBBBB-CCCCC" disabled> -->
-                                      <div class="token-bonus" style="font-size: 11px;">Você ainda não resgatou a chave do seu jogo.</div>
-                                      <button class="btn btn-primary">Revelar</button>
+                                      <% existing_key = @redeemed_keys.find_by(game_id: game.id) %>
+                                      <% if existing_key.nil? %>
+                                        <div id="before_redeem_<%= game.id %>">
+                                          <div class="token-bonus" style="font-size: 11px;">Você ainda não resgatou a chave do seu jogo.</div>
+                                          <button class="btn btn-primary" onclick="redeem_game(<%= game.id %>)">Revelar</button>
+                                        </div>
+                                        <div id="after_redeem_<%= game.id %>" style="display: none; margin-top: 10px;">
+                                          <input id="key_<%= game.id %>" type="text" class="refferal-address" value="" disabled>
+                                          <button id="copy_<%= game.id %>" class="refferal-copy copy-clipboard" data-clipboard-text="">
+                                            <em class="ti ti-files"></em>
+                                          </button>
+                                        </div>
+                                      <% else %>
+                                        <div style="margin-top: 10px;">
+                                          <span class="refferal-copy-feedback copy-feedback"></span>
+                                          <input type="text" class="refferal-address" value="<%= existing_key.encrypted_key %>" disabled>
+                                          <button class="refferal-copy copy-clipboard" data-clipboard-text="<%= existing_key.encrypted_key %>">
+                                            <em class="ti ti-files"></em>
+                                          </button>
+                                        </div>
+                                      <% end %>
                                   </div><!-- .refferal-info --> <!-- @updated on v1.0.1 -->
                               </div>
                           </div><!-- .token-card -->

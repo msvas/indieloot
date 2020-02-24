@@ -31,10 +31,10 @@ ActiveRecord::Schema.define(version: 2020_02_22_230424) do
     t.datetime "given_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "games_id"
-    t.bigint "users_id"
-    t.index ["games_id"], name: "index_keys_on_games_id"
-    t.index ["users_id"], name: "index_keys_on_users_id"
+    t.bigint "game_id"
+    t.bigint "user_id"
+    t.index ["game_id"], name: "index_keys_on_game_id"
+    t.index ["user_id"], name: "index_keys_on_user_id"
   end
 
   create_table "plans", force: :cascade do |t|
@@ -83,7 +83,7 @@ ActiveRecord::Schema.define(version: 2020_02_22_230424) do
     t.bigint "game_id", null: false
   end
 
-  add_foreign_key "keys", "games", column: "games_id"
-  add_foreign_key "keys", "users", column: "users_id"
+  add_foreign_key "keys", "games"
+  add_foreign_key "keys", "users"
   add_foreign_key "users", "plans"
 end
