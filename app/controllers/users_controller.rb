@@ -24,4 +24,8 @@ class UsersController < ApplicationController
     end
   end
 
+  def payment
+    @user = current_user
+  end
+
 end
