@@ -16,8 +16,131 @@
     <%= stylesheet_link_tag 'user_style', media: 'all' %>
   </head>
 
-  <body>
-    <%= yield %>
+  <body class="user-dashboard">
+    <div class="topbar">
+        <div class="topbar-md d-lg-none">
+            <div class="container">
+                <div class="d-flex align-items-center justify-content-between">
+                    <a href="#" class="toggle-nav">
+                        <div class="toggle-icon">
+                            <span class="toggle-line"></span>
+                            <span class="toggle-line"></span>
+                            <span class="toggle-line"></span>
+                            <span class="toggle-line"></span>
+                        </div>
+                    </a><!-- .toggle-nav -->
+
+                    <div class="site-logo">
+                        <a href="index.html" class="site-brand">
+                          <img src="<%= asset_path('indieloot_logo3_1x.png') %>" srcset="<%= asset_path('indieloot_logo3_2x.png') %> 2x" alt="logo">
+                        </a>
+                    </div><!-- .site-logo -->
+
+                </div><!-- .container -->
+            </div><!-- .container -->
+        </div><!-- .topbar-md -->
+        <div class="container">
+            <div class="d-lg-flex align-items-center justify-content-between">
+                <div class="topbar-lg d-none d-lg-block">
+                    <div class="site-logo">
+                        <%= link_to root_path, class: "site-brand" do %>
+                          <img src="<%= asset_path('indieloot_logo3_1x.png') %>" srcset="<%= asset_path('indieloot_logo3_2x.png') %> 2x" alt="logo">
+                        <% end %>
+                    </div><!-- .site-logo -->
+                </div><!-- .topbar-lg -->
+
+                <div class="topbar-action d-none d-lg-block">
+                    <ul class="topbar-action-list">
+                        <li class="topbar-action-item topbar-action-link">
+                            <%= link_to root_path do %>
+                              <em class="ti ti-home"></em>
+                              Página inicial
+                            <% end %>
+                        </li><!-- .topbar-action-item -->
+
+                        <li class="topbar-action-item topbar-action-link">
+                            <%= link_to 'sair' do %>
+                              <em class="ti ti-power-off"></em>
+                              Sair
+                            <% end %>
+                        </li><!-- .topbar-action-item -->
+
+
+                    </ul><!-- .topbar-action-list -->
+                </div><!-- .topbar-action -->
+            </div><!-- .d-flex -->
+        </div><!-- .container -->
+    </div>
+    <!-- TopBar End -->
+    <div class="user-wraper">
+        <div class="container">
+            <div class="d-flex">
+                <div class="user-sidebar">
+                    <div class="user-sidebar-overlay"></div>
+                    <div class="user-box d-none d-lg-block">
+                        <h6 class="user-name"><%= @user.name %></h6>
+                        <div class="user-uid">
+                          <%= @user.email %>
+                        </div>
+                    </div><!-- .user-box -->
+                    <ul class="user-icon-nav">
+                        <li><a href="index.html"><em class="ti ti-dashboard"></em>Dashboard</a></li>
+                        <li>
+                          <%= link_to month_games_path() do %>
+                            <em class="ti ti-files"></em>
+                            Jogos do mês
+                          <% end %>
+                        </li>
+                        <li><a href="tokens.html"><em class="ti ti-pie-chart"></em>Biblioteca</a></li>
+                        <li><a href="account.html"><em class="ti ti-user"></em>Configurações</a></li>
+                    </ul><!-- .user-icon-nav -->
+                    <div class="user-sidebar-sap"></div><!-- .user-sidebar-sap -->
+                    <ul class="user-nav">
+                        <li><a href="how-to.html">How to buy?</a></li>
+                        <li><a href="faq.html">Faqs</a></li>
+                        <li><a href="#">Whitepaper</a></li>
+                        <li>Contact Support<span>info@icocrypto.com</span></li>
+                    </ul><!-- .user-nav -->
+                    <div class="d-lg-none">
+                        <div class="user-sidebar-sap"></div>
+                        <div class="gaps-1x"></div>
+                        <ul class="topbar-action-list">
+                            <li class="topbar-action-item topbar-action-link">
+                                <a href="#"><em class="ti ti-home"></em> Go to main site</a>
+                            </li><!-- .topbar-action-item -->
+                            <li class="dropup topbar-action-item topbar-action-language">
+                                <a href="#" data-toggle="dropdown" aria-haspopup="true"> EN <em class="ti ti-angle-up"></em> </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">FR</a></li>
+                                    <li><a href="#">JY</a></li>
+                                    <li><a href="#">CH</a></li>
+                                </ul>
+                            </li><!-- .topbar-action-item -->
+                        </ul><!-- .topbar-action-list -->
+                    </div>
+                </div><!-- .user-sidebar -->
+                <%= yield %>
+              </div><!-- .d-flex -->
+          </div><!-- .container -->
+      </div>
+      <!-- UserWraper End -->
+
+      <div class="footer-bar">
+          <div class="container">
+              <div class="row">
+                  <div class="col-md-7">
+                      <span class="footer-copyright">Copyright 2018, <a href="#">ICO Crypto</a>.  All Rights Reserved.</span>
+                  </div><!-- .col -->
+                  <div class="col-md-5 text-md-right">
+                      <ul class="footer-links">
+                          <li><a href="policy.html">Privacy Policy</a></li>
+                          <li><a href="policy.html">Terms of Sales</a></li>
+                      </ul>
+                  </div><!-- .col -->
+              </div><!-- .row -->
+          </div><!-- .container -->
+      </div>
+      <!-- FooterBar End -->
   </body>
 </html>
 <%= javascript_include_tag 'application' %>

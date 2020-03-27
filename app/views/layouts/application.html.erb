@@ -15,8 +15,290 @@
     <%= stylesheet_link_tag 'application', media: 'all' %>
   </head>
 
-  <body>
-    <%= yield %>
+  <body class="nk-body body-wider bg-theme">
+    <div class="nk-wrap">
+      <header class="nk-header page-header is-transparent is-sticky is-dark" id="header">
+          <!-- Header @s -->
+        <div class="header-main">
+          <div class="header-container container container-xxl">
+            <div class="header-wrap">
+              <!-- Logo @s -->
+              <div class="header-logo logo animated" data-animate="fadeInDown" data-delay=".6">
+                <a href="/" class="logo-link">
+                  <img class="logo-dark" src="<%= asset_path('indieloot_logo3_1x.png') %>" srcset="<%= asset_path('indieloot_logo3_2x.png') %> 2x" alt="logo">
+                  <img class="logo-light" src="<%= asset_path('indieloot_logo3_1x.png') %>" srcset="<%= asset_path('indieloot_logo3_2x.png') %> 2x" alt="logo">
+                </a>
+              </div>
+
+              <!-- Menu Toogle @s -->
+              <div class="header-nav-toggle">
+                <a href="#" class="navbar-toggle" data-menu-toggle="header-menu">
+                  <div class="toggle-line">
+                      <span></span>
+                  </div>
+                </a>
+              </div>
+
+              <!-- Menu @s -->
+              <div class="header-navbar animated" data-animate="fadeInDown" data-delay=".6">
+                <nav class="header-menu" id="header-menu">
+                  <ul class="menu">
+                    <li class="menu-item has-sub">
+                        <a class="menu-link nav-link menu-toggle" href="#">Home</a>
+                        <div class="menu-sub menu-drop menu-mega menu-mega-3clmn">
+                            <div class="menu-mega-innr">
+                                <ul class="menu-mega-list">
+                                    <li class="menu-item"><a href="index-salvia.html">Salvia Pro</a></li>
+                                </ul>
+                                <ul class="menu-mega-list">
+                                    <li class="menu-item"><a href="index-azure.html">Azure Dark</a></li>
+                                </ul>
+                                <ul class="menu-mega-list">
+                                    <li class="menu-item"><a href="index-dark-pro.html">Default Dark Pro</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="menu-item has-sub">
+                        <a class="menu-link nav-link menu-toggle" href="#">Pages</a>
+                        <ul class="menu-sub menu-drop menu-mega menu-mega-2clmn">
+                            <div class="menu-mega-innr">
+                                <ul class="menu-mega-list">
+                                    <li class="menu-item"><a class="menu-link nav-link" href="page-about.html">About Us - Base</a></li>
+                                </ul>
+                                <ul class="menu-mega-list">
+                                    <li class="menu-item"><a class="menu-link nav-link" href="page-download.html">Download</a></li>
+                                </ul>
+                            </div>
+                        </ul>
+                    </li>
+                    <li class="menu-item has-sub">
+                        <a class="menu-link nav-link menu-toggle" href="#">Blog & Misc</a>
+                        <ul class="menu-sub menu-drop">
+                            <li class="menu-item has-sub">
+                                <a class="menu-link nav-link menu-toggle" href="#">Blog Pages</a>
+                                <ul class="menu-sub menu-drop">
+                                    <li class="menu-item"><a class="menu-link nav-link" href="blog-3clmn.html">Blog 3 Column</a></li>
+                                </ul>
+                            </li>
+                            <li class="menu-item has-sub">
+                                <a class="menu-link nav-link menu-toggle" href="#">Ath Pages</a>
+                                <ul class="menu-sub menu-drop">
+                                    <li class="menu-item"><a class="menu-link nav-link" href="page-login.html">Login - v1</a></li>
+                                </ul>
+                            </li>
+                            <li class="menu-item has-sub">
+                                <a class="menu-link nav-link menu-toggle" href="#">Coming Soon<span class="badge badge-xs badge-info">NEW</span></a>
+                                <ul class="menu-sub menu-drop">
+                                    <li class="menu-item"><a class="menu-link nav-link" href="coming-soon-azalea.html" target="_blank">Coming Soon - Azalea</a></li>
+                                </ul>
+                            </li>
+                            <li class="menu-item has-sub">
+                                <a class="menu-link nav-link menu-toggle" href="#">Error 404<span class="badge badge-xs badge-info">NEW</span></a>
+                                <ul class="menu-sub menu-drop">
+                                    <li class="menu-item"><a class="menu-link nav-link" href="error-404-gentian.html" target="_blank">404 - Gentian</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="menu-item has-sub">
+                        <a class="menu-link nav-link menu-toggle" href="#">Elements</a>
+                        <div class="menu-sub menu-drop menu-mega menu-mega-2clmn">
+                            <div class="menu-mega-innr">
+                                <ul class="menu-mega-list">
+                                    <li class="menu-item"><a href="element-alert.html">Alert</a></li>
+                                </ul>
+                                <ul class="menu-mega-list">
+                                    <li class="menu-item"><a href="element-tab.html">Tabs</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                  </ul>
+
+                  <ul class="menu-btns">
+                    <li>
+                      <%= link_to assinar_path(), :class => "btn btn-md btn-thin btn-outline btn-auto btn-primary btn-round no-change" do %>
+                        <span>Assinar</span>
+                      <% end %>
+                    </li>
+                    <li>
+                      <a href="#" data-toggle="modal" data-target="#login-popup" class="btn btn-md btn-thin btn-outline btn-auto btn-secondary btn-round no-change">
+                        <span>Entrar</span>
+                      </a>
+                    </li>
+                  </ul>
+                </nav>
+              </div><!-- .header-navbar @e -->
+            </div>
+          </div>
+        </div><!-- .header-main @e -->
+
+        <% if @show_banner %>
+          <div class="banner banner-fs tc-light">
+
+              <div class="nk-block nk-block-sm nk-block-header my-auto">
+                  <div class="container container-xxl pt-5">
+                      <div class="row align-items-center justify-content-center justify-content-lg-between gutter-vr-30px">
+                          <div class="col-lg-6 order-lg-last">
+                              <div class="banner-gfx banner-gfx-auto animated" data-animate="fadeInUp" data-delay=".7">
+                                  <img src="<%= asset_path('lootboxes.png') %>" alt="header">
+                              </div>
+                          </div><!-- .col -->
+                          <div class="col-xl-5 col-lg-6 col-sm-10 text-center text-lg-left">
+                              <div class="banner-caption">
+                                  <h1 class="title title-lg ttu animated" data-animate="fadeInUp" data-delay=".8">World First Decentralized Marketplace with blockchain infrastructure</h1>
+                                  <p class="lead animated" data-animate="fadeInUp" data-delay=".9">The first decentralized Marketplace which makes simplifies and standarizes data with blockchain technology. We provides user-friendly, efficient and secure crypto solutions and utilizing blockchain technology. </p>
+                                  <div class="cpn-action animated" data-animate="fadeInUp" data-delay="1">
+                                      <a class="btn btn-primary btn-round" href="#">PRIVATE SALE</a>
+                                  </div>
+                              </div>
+                          </div><!-- .col -->
+                      </div><!-- .row -->
+                  </div>
+              </div>
+              <!-- Place Particle Js -->
+              <div id="particles-bg" class="particles-container is-fixed particles-bg op-20"></div>
+          </div>
+        <% end %>
+
+      </header>
+      <%= yield %>
+      <footer class="nk-footer-bar section section-s tc-light">
+          <div class="container container-xxl">
+              <div class="row gutter-vr-10px">
+                  <div class="col-lg-6 order-lg-last text-lg-right">
+                      <ul class="footer-nav">
+                          <li><a href="#">Privacy Policy</a></li>
+                          <li><a href="#">Terms of sales</a></li>
+                      </ul>
+                  </div>
+                  <div class="col-lg-6">
+                      <div class="copyright-text copyright-text-s2">Copyright © 2019 ICO. Handcrafted by <a href="#">iO</a>.</div>
+                  </div>
+              </div>
+          </div>
+      </footer>
+
+      <div class="nk-ovm nk-ovm-repeat nk-ovm-fixed shape-i">
+          <div class="ovm-line"></div>
+      </div>
+    </div>
+    <!-- Modal @s -->
+  	<div class="modal fade" id="register-popup">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <a href="#" class="modal-close" data-dismiss="modal" aria-label="Close"><em class="ti ti-close"></em></a>
+                <div class="ath-container m-0">
+                    <div class="ath-body bg-theme tc-light">
+                        <h5 class="ath-heading title">Sign Up <small class="tc-default">Create New TokenWiz Account</small></h5>
+                        <form action="#">
+                            <div class="field-item">
+                                <div class="field-wrap">
+                                    <input type="text" class="input-bordered" placeholder="Your Name">
+                                </div>
+                            </div>
+                            <div class="field-item">
+                                <div class="field-wrap">
+                                    <input type="text" class="input-bordered" placeholder="Your Email">
+                                </div>
+                            </div>
+                            <div class="field-item">
+                                <div class="field-wrap">
+                                    <input type="password" class="input-bordered" placeholder="Password">
+                                </div>
+                            </div>
+                            <div class="field-item">
+                                <div class="field-wrap">
+                                    <input type="password" class="input-bordered" placeholder="Repeat Password">
+                                </div>
+                            </div>
+                            <div class="field-item">
+                                <input class="input-checkbox" id="agree-term-2" type="checkbox">
+                                <label for="agree-term-2">I agree to Icos <a href="#">Privacy Policy</a> &amp; <a href="#">Terms</a>.</label>
+                            </div>
+                            <button class="btn btn-primary btn-block btn-md">Sign Up</button>
+                        </form>
+                        <div class="sap-text"><span>Or Sign Up With</span></div>
+
+                        <ul class="row gutter-20px gutter-vr-20px">
+                            <li class="col"><a href="#" class="btn btn-md btn-facebook btn-block"><em class="icon fab fa-facebook-f"></em><span>Facebook</span></a></li>
+                            <li class="col"><a href="#" class="btn btn-md btn-google btn-block"><em class="icon fab fa-google"></em><span>Google</span></a></li>
+                        </ul>
+                        <div class="ath-note text-center">
+                            Already have an account? <a href="#" data-toggle="modal" data-dismiss="modal" data-target="#login-popup"> <strong>Sign in here</strong></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- .modal @e -->
+
+      <!-- Modal @s -->
+  	<div class="modal fade" id="reset-popup">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <a href="#" class="modal-close" data-dismiss="modal" aria-label="Close"><em class="ti ti-close"></em></a>
+                <div class="ath-container m-0">
+                    <div class="ath-body bg-theme tc-light">
+                        <h5 class="ath-heading title">Reset <small class="tc-default">with your Email</small></h5>
+                        <form action="#">
+                            <div class="field-item">
+                                <div class="field-wrap">
+                                    <input type="text" class="input-bordered" placeholder="Your Email">
+                                </div>
+                            </div>
+                            <button class="btn btn-primary btn-block btn-md">Reset Password</button>
+                            <div class="ath-note text-center">
+                                Remembered? <a href="#" data-toggle="modal" data-dismiss="modal" data-target="#login-popup"> <strong>Sign in here</strong></a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- .modal @e -->
+    <!-- Modal @s -->
+    <div class="modal fade" id="login-popup">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <a href="#" class="modal-close" data-dismiss="modal" aria-label="Close"><em class="ti ti-close"></em></a>
+                <div class="ath-container m-0">
+                    <div class="ath-body bg-theme tc-light">
+                        <h5 class="ath-heading title">Entre <small class="tc-default">com sua conta no Indie Loot</small></h5>
+                        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+                            <div class="field-item">
+                                <div class="field-wrap">
+                                    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "input-bordered", placeholder: "Seu email"  %>
+                                </div>
+                            </div>
+                            <div class="field-item">
+                                <div class="field-wrap">
+                                    <%= f.password_field :password, autocomplete: "current-password", class: "input-bordered", placeholder: "Sua senha" %>
+                                </div>
+                            </div>
+                            <div class="field-item d-flex justify-content-between align-items-center">
+                                <div class="field-item pb-0">
+                                  <%= f.check_box :remember_me, class: "input-checkbox", id: "remember-me-100" %>
+                                  <label for="remember-me-100">Lembrar</label>
+                                </div>
+                                <div class="forget-link fz-6">
+                                    <a href="#" data-toggle="modal" data-dismiss="modal" data-target="#reset-popup">Esqueceu a senha?</a>
+                                </div>
+                            </div>
+                            <%= f.submit "Entrar", class: "btn btn-primary btn-block btn-md" %>
+                        <% end %>
+
+                        <div class="ath-note text-center">
+                            Não tem uma conta? <a href="#" data-toggle="modal" data-dismiss="modal" data-target="#register-popup"> <strong>Assine aqui</strong></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- .modal @e -->
+    <!-- preloader -->
+    <div class="preloader preloader-alt no-split"><span class="spinner spinner-alt"><img class="spinner-brand" src="<% asset_path('logo-s2-white.png') %>" alt=""></span></div>
   </body>
 </html>
 <%= javascript_include_tag 'application' %>

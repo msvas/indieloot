@@ -1,145 +1,26 @@
-<body class="user-dashboard">
-    <div class="topbar">
-        <div class="topbar-md d-lg-none">
-            <div class="container">
-                <div class="d-flex align-items-center justify-content-between">
-                    <a href="#" class="toggle-nav">
-                        <div class="toggle-icon">
-                            <span class="toggle-line"></span>
-                            <span class="toggle-line"></span>
-                            <span class="toggle-line"></span>
-                            <span class="toggle-line"></span>
-                        </div>
-                    </a><!-- .toggle-nav -->
 
-                    <div class="site-logo">
-                        <a href="index.html" class="site-brand">
-                          <img src="<%= asset_path('indieloot_logo3_1x.png') %>" srcset="<%= asset_path('indieloot_logo3_2x.png') %> 2x" alt="logo">
-                        </a>
-                    </div><!-- .site-logo -->
+<div class="user-content">
+	<div class="user-panel">
+			<h2 class="user-panel-title">Realização do Pagamento</h2>
+			<p>Você está quase lá! Para ter acesso aos seus jogos, autorize o pagamento pela plataforma segura do PayPal clicando no botão abaixo.</p>
+			<div class="gaps-2x"></div>
+			<div class="status status-empty">
+					<div class="status-icon">
+							<em class="ti ti-files"></em>
+							<div class="status-icon-sm">
+									<em class="ti ti-close"></em>
+							</div>
+					</div>
+					<span class="status-text">Pronto! Só falta autorizar o pagamento:</span>
+          <div id='paypal-btn'></div>
+					<!--<a href="#" class="btn btn-primary">Autorizar pelo PayPal</a> <!-->
+			</div>
+			<div class="note note-md note-info note-plane">
+					<em class="fas fa-info-circle"></em>
+					<p>O pagamento será recorrente, pelo cartão de crédito, e dará acesso aos seus novos jogos todo mês. Você pode cancelar a qualquer momento.</p>
+			</div>
+	</div><!-- .user-kyc -->
+</div><!-- .user-content -->
 
-                </div><!-- .container -->
-            </div><!-- .container -->
-        </div><!-- .topbar-md -->
-        <div class="container">
-            <div class="d-lg-flex align-items-center justify-content-between">
-                <div class="topbar-lg d-none d-lg-block">
-                    <div class="site-logo">
-                        <%= link_to root_path, class: "site-brand" do %>
-                          <img src="<%= asset_path('indieloot_logo3_1x.png') %>" srcset="<%= asset_path('indieloot_logo3_2x.png') %> 2x" alt="logo">
-                        <% end %>
-                    </div><!-- .site-logo -->
-                </div><!-- .topbar-lg -->
-
-                <div class="topbar-action d-none d-lg-block">
-                    <ul class="topbar-action-list">
-                        <li class="topbar-action-item topbar-action-link">
-                            <%= link_to root_path do %>
-                              <em class="ti ti-home"></em>
-                              Página inicial
-                            <% end %>
-                        </li><!-- .topbar-action-item -->
-
-                        <li class="topbar-action-item topbar-action-link">
-                            <%= link_to root_path do %>
-                              <em class="ti ti-power-off"></em>
-                              Sair
-                            <% end %>
-                        </li><!-- .topbar-action-item -->
-
-
-                    </ul><!-- .topbar-action-list -->
-                </div><!-- .topbar-action -->
-            </div><!-- .d-flex -->
-        </div><!-- .container -->
-    </div>
-    <!-- TopBar End -->
-
-
-    <div class="user-wraper">
-        <div class="container">
-            <div class="d-flex">
-                <div class="user-sidebar">
-                    <div class="user-sidebar-overlay"></div>
-                    <div class="user-box d-none d-lg-block">
-                        <h6 class="user-name"><%= @user.name %></h6>
-                        <div class="user-uid">
-                          <%= @user.email %>
-                        </div>
-                    </div><!-- .user-box -->
-                    <ul class="user-icon-nav">
-                        <li><a href="index.html"><em class="ti ti-dashboard"></em>Dashboard</a></li>
-                        <li><a href="kyc.html"><em class="ti ti-files"></em>Jogos do mês</a></li>
-                        <li><a href="tokens.html"><em class="ti ti-pie-chart"></em>Biblioteca</a></li>
-                        <li><a href="account.html"><em class="ti ti-user"></em>Configurações</a></li>
-                    </ul><!-- .user-icon-nav -->
-                    <div class="user-sidebar-sap"></div><!-- .user-sidebar-sap -->
-                    <ul class="user-nav">
-                        <li><a href="how-to.html">How to buy?</a></li>
-                        <li><a href="faq.html">Faqs</a></li>
-                        <li><a href="#">Whitepaper</a></li>
-                        <li>Contact Support<span>info@icocrypto.com</span></li>
-                    </ul><!-- .user-nav -->
-                    <div class="d-lg-none">
-                        <div class="user-sidebar-sap"></div>
-                        <div class="gaps-1x"></div>
-                        <ul class="topbar-action-list">
-                            <li class="topbar-action-item topbar-action-link">
-                                <a href="#"><em class="ti ti-home"></em> Go to main site</a>
-                            </li><!-- .topbar-action-item -->
-                            <li class="dropup topbar-action-item topbar-action-language">
-                                <a href="#" data-toggle="dropdown" aria-haspopup="true"> EN <em class="ti ti-angle-up"></em> </a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">FR</a></li>
-                                    <li><a href="#">JY</a></li>
-                                    <li><a href="#">CH</a></li>
-                                </ul>
-                            </li><!-- .topbar-action-item -->
-                        </ul><!-- .topbar-action-list -->
-                    </div>
-                </div><!-- .user-sidebar -->
-
-								<div class="user-content">
-									<div class="user-panel">
-											<h2 class="user-panel-title">Realização do Pagamento</h2>
-											<p>Você está quase lá! Para ter acesso aos seus jogos, autorize o pagamento pela plataforma segura do PayPal clicando no botão abaixo.</p>
-											<div class="gaps-2x"></div>
-											<div class="status status-empty">
-													<div class="status-icon">
-															<em class="ti ti-files"></em>
-															<div class="status-icon-sm">
-																	<em class="ti ti-close"></em>
-															</div>
-													</div>
-													<span class="status-text">Pronto! Só falta autorizar o pagamento</span>
-													<a href="kyc-application.html" class="btn btn-primary">Autorizar pelo PayPal</a>
-											</div>
-											<div class="note note-md note-info note-plane">
-													<em class="fas fa-info-circle"></em>
-													<p>O pagamento será recorrente, pelo cartão de crédito, e dará acesso aos seus novos jogos todo mês.</p>
-											</div>
-									</div><!-- .user-kyc -->
-							</div><!-- .user-content -->
-            </div><!-- .d-flex -->
-        </div><!-- .container -->
-    </div>
-    <!-- UserWraper End -->
-
-
-    <div class="footer-bar">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-7">
-                    <span class="footer-copyright">Copyright 2018, <a href="#">ICO Crypto</a>.  All Rights Reserved.</span>
-                </div><!-- .col -->
-                <div class="col-md-5 text-md-right">
-                    <ul class="footer-links">
-                        <li><a href="policy.html">Privacy Policy</a></li>
-                        <li><a href="policy.html">Terms of Sales</a></li>
-                    </ul>
-                </div><!-- .col -->
-            </div><!-- .row -->
-        </div><!-- .container -->
-    </div>
-    <!-- FooterBar End -->
-</body>
+<script src="https://www.paypal.com/sdk/js?client-id=AXM1zv_UklRbQ6_Jbb51kVREuTF5M7PPayUI5b3dDGa0G34yZv6lPex_y71swVuv6WSwogh_o1JqhaS9&vault=true"></script>
+<script>paypal.Buttons().render('#paypal-btn');</script>

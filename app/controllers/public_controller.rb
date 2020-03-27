@@ -1,6 +1,7 @@
 class PublicController < ApplicationController
   skip_before_action :authenticate_user!
   helper_method :resource_name, :resource, :devise_mapping, :resource_class
+  before_action :set_banner, only: [:index]
 
   def index
 
@@ -20,5 +21,11 @@ class PublicController < ApplicationController
 
   def devise_mapping
     @devise_mapping ||= Devise.mappings[:user]
+  end
+
+  private
+
+  def set_banner
+    @show_banner = true
   end
 end
