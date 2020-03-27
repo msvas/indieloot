@@ -1,0 +1,40 @@
+<div class="user-content">
+  <div class="user-panel">
+      <h2 class="user-panel-title">Minha biblioteca de jogos</h2>
+
+      <!-- if there is no transaction you can use this code -->
+      <!-- <div class="status status-empty">
+          <div class="status-icon">
+              <em class="ti ti-files"></em>
+              <div class="status-icon-sm">
+                  <em class="ti ti-close"></em>
+              </div>
+          </div>
+          <span class="status-text">You have not contributed yet! You should make some.</span>
+          <a href="tokens.html" class="btn btn-primary">Contribute Now</a>
+      </div> -->
+
+      <table class="data-table tranx-table">
+        <thead>
+            <tr>
+                <th class="tranx-name"><span>Jogo</span></th>
+                <th class="tranx-key"><span>Chave</span></th>
+                <th class="tranx-date"><span>Resgatada em</span></th>
+            </tr>
+        </thead>
+        <tbody>
+					<% @my_keys.each do |key| %>
+	          <tr>
+	            <td class="tranx-name"><span><%= key.game.name %></span></td>
+	            <td class="tranx-key"><%= key.encrypted_key %></td>
+	            <td class="tranx-date">
+								<%= key.given_date.to_time.strftime('%d/%m/%Y') %>,
+								às <%= key.given_date.to_time.strftime('%H:%M') %>
+							</td>
+	          </tr>
+					<% end %>
+      	</tbody>
+      </table>
+
+  </div><!-- .user-panel -->
+</div><!-- .user-content -->

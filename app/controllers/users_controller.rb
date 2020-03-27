@@ -1,13 +1,15 @@
 class UsersController < ApplicationController
+  before_action :set_user, only: [:dashboard, :month_games, :payment,
+                                  :library, :account]
   def dashboard
-    @user = current_user
+
   end
 
   def month_games
-    @user = current_user
     @month_games = Game.where(featured: true)
     @redeemed_keys = Key.where("game_id IN (?) AND user_id = ? AND status = ?",
-                                @month_games.ids.to_a, current_user.id, Key.statuses[:redeemed])
+                                @month_games.ids.to_a, current_user.id,
+                                Key.statuses[:redeemed])
   end
 
   def redeem_key
@@ -25,6 +27,18 @@ class UsersController < ApplicationController
   end
 
   def payment
+
+  end
+
+  def library
+    @my_keys = Key.where("user_id = ? AND status = ?",
+                          @user.id,
+                          Key.statuses[:redeemed])
+  end
+
+  private
+
+  def set_user
     @user = current_user
   end
 

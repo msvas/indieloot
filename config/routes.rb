@@ -14,8 +14,10 @@ Rails.application.routes.draw do
 
   root to: "public#index"
 
-  get 'dashboard', to: 'users#dashboard'
+  get 'dashboard', to: 'users#dashboard', as: :dashboard
   get 'jogos-do-mes', to: 'users#month_games', as: :month_games
   get 'pagamento', to: 'users#payment', as: :payment
+  get 'biblioteca', to: 'users#library', as: :library
+  get 'conta', to: 'users#account', as: :account
   get 'redeem-game-key', to: 'users#redeem_key'
 end

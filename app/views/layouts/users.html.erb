@@ -32,7 +32,7 @@
 
                     <div class="site-logo">
                         <a href="index.html" class="site-brand">
-                          <img src="<%= asset_path('indieloot_logo3_1x.png') %>" srcset="<%= asset_path('indieloot_logo3_2x.png') %> 2x" alt="logo">
+                          <img class="w80" src="<%= asset_path('indieloot_logo3_1x.png') %>" srcset="<%= asset_path('indieloot_logo3_2x.png') %> 2x" alt="logo">
                         </a>
                     </div><!-- .site-logo -->
 
@@ -44,7 +44,7 @@
                 <div class="topbar-lg d-none d-lg-block">
                     <div class="site-logo">
                         <%= link_to root_path, class: "site-brand" do %>
-                          <img src="<%= asset_path('indieloot_logo3_1x.png') %>" srcset="<%= asset_path('indieloot_logo3_2x.png') %> 2x" alt="logo">
+                          <img class="w80" src="<%= asset_path('indieloot_logo3_1x.png') %>" srcset="<%= asset_path('indieloot_logo3_2x.png') %> 2x" alt="logo">
                         <% end %>
                     </div><!-- .site-logo -->
                 </div><!-- .topbar-lg -->
@@ -84,15 +84,30 @@
                         </div>
                     </div><!-- .user-box -->
                     <ul class="user-icon-nav">
-                        <li><a href="index.html"><em class="ti ti-dashboard"></em>Dashboard</a></li>
+                        <li>
+                          <%= link_to dashboard_path() do %>
+                            <em class="ti ti-dashboard"></em>
+                            Dashboard
+                          <% end %>
+                        </li>
                         <li>
                           <%= link_to month_games_path() do %>
                             <em class="ti ti-files"></em>
                             Jogos do mês
                           <% end %>
                         </li>
-                        <li><a href="tokens.html"><em class="ti ti-pie-chart"></em>Biblioteca</a></li>
-                        <li><a href="account.html"><em class="ti ti-user"></em>Configurações</a></li>
+                        <li>
+                          <%= link_to library_path() do %>
+                            <em class="ti ti-pie-chart"></em>
+                            Biblioteca
+                          <% end %>
+                        </li>
+                        <li>
+                          <%= link_to account_path() do %>
+                            <em class="ti ti-user"></em>
+                            Configurações
+                          <% end %>
+                        </li>
                     </ul><!-- .user-icon-nav -->
                     <div class="user-sidebar-sap"></div><!-- .user-sidebar-sap -->
                     <ul class="user-nav">
@@ -144,3 +159,4 @@
   </body>
 </html>
 <%= javascript_include_tag 'application' %>
+<%= javascript_include_tag 'user_script' %>
