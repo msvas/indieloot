@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:dashboard, :month_games, :payment,
                                   :library, :account]
+  before_action :check_subscription, except: [:payment, :account, :library]
+
   def dashboard
 
   end

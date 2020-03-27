@@ -13,4 +13,6 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 # folder are already added.
 Rails.application.config.assets.precompile += %w( user_style.css
                                                   user_vendor.bundle.css
-                                                  user_script.js )
+                                                  user_script.js
+                                                  jquery.bundle.dashboard.js
+                                                  custom.js )

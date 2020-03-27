@@ -33,6 +33,46 @@
 							</td>
 	          </tr>
 					<% end %>
+					<% @my_keys.each do |key| %>
+	          <tr>
+	            <td class="tranx-name"><span><%= key.game.name %></span></td>
+	            <td class="tranx-key"><%= key.encrypted_key %></td>
+	            <td class="tranx-date">
+								<%= key.given_date.to_time.strftime('%d/%m/%Y') %>,
+								às <%= key.given_date.to_time.strftime('%H:%M') %>
+							</td>
+	          </tr>
+					<% end %>
+					<% @my_keys.each do |key| %>
+	          <tr>
+	            <td class="tranx-name"><span><%= key.game.name %></span></td>
+	            <td class="tranx-key"><%= key.encrypted_key %></td>
+	            <td class="tranx-date">
+								<%= key.given_date.to_time.strftime('%d/%m/%Y') %>,
+								às <%= key.given_date.to_time.strftime('%H:%M') %>
+							</td>
+	          </tr>
+					<% end %>
+					<% @my_keys.each do |key| %>
+	          <tr>
+	            <td class="tranx-name"><span><%= key.game.name %></span></td>
+	            <td class="tranx-key"><%= key.encrypted_key %></td>
+	            <td class="tranx-date">
+								<%= key.given_date.to_time.strftime('%d/%m/%Y') %>,
+								às <%= key.given_date.to_time.strftime('%H:%M') %>
+							</td>
+	          </tr>
+					<% end %>
+					<% @my_keys.each do |key| %>
+	          <tr>
+	            <td class="tranx-name"><span><%= key.game.name %></span></td>
+	            <td class="tranx-key"><%= key.encrypted_key %></td>
+	            <td class="tranx-date">
+								<%= key.given_date.to_time.strftime('%d/%m/%Y') %>,
+								às <%= key.given_date.to_time.strftime('%H:%M') %>
+							</td>
+	          </tr>
+					<% end %>
       	</tbody>
       </table>
 

@@ -6,6 +6,12 @@ class ApplicationController < ActionController::Base
     dashboard_path
   end
 
+  def check_subscription
+    if current_user.registered?
+      redirect_to payment_path
+    end
+  end
+
   protected
 
   def configure_permitted_parameters
