@@ -126,7 +126,7 @@
            "language": {
                 "search": "",
                 "searchPlaceholder": "Procure pelo nome",
-                "info": "_START_ -_END_ of _TOTAL_",
+                "info": "_START_ -_END_ de _TOTAL_",
                 "infoEmpty": "Sem jogos resgatados",
                 "infoFiltered": "( Total _MAX_  )",
                 "paginate": {
